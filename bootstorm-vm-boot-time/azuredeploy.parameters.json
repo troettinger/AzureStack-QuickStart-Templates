@@ -5,6 +5,9 @@
 	"azureAccountUsername": {
       "value": "AZURE-AD-ACCOUNT-USERNAME"
     },
+    "VMAdminUserName": {
+      "value": "UsernameForTheVM"
+    },
     "azureAccountPassword": {
       "value": "AZURE-AD-ACCOUNT-PASSWORD"
     },

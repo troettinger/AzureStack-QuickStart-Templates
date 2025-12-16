@@ -42,6 +42,20 @@
 				"description": "Administrator password for each deployed VM"
 			}
 		},
+	"dockerUserName": {
+      "type": "string",
+      "minLength": 1,
+      "metadata": {
+        "description": "Container registry username"
+      }
+    },
+    "dockerPassword": {
+      "type": "securestring",
+      "minLength": 1,
+      "metadata": {
+        "description": "container registry password"
+      }
+    },
 		"adminSSHKey": {
 			"type": "string",
 			"defaultValue": "",
@@ -199,8 +213,8 @@
 		"regionCount": 1,
 		"transactionPermissioningContract": "",
 		"dockerRepository": "ethererumregistry.azurecr.io",
-		"dockerLogin": "ethererumregistry",
-		"dockerPassword": "yn0SK6sDw/FvP2Rg9FlaqYbuB6OPrMoZ",
+		"dockerLogin": "[parameters('dockerUserName')]",
+		"dockerPassword": "[parameters('dockerPassword')]",
 		"dockerImagePoaOrchestrator": "orchestrator:hybrid",
 		"dockerImageEtheradmin": "etheradmin:hybrid",
 		"dockerImageEthstat": "ethstat:hybrid",

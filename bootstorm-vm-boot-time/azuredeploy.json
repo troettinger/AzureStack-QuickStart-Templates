@@ -16,6 +16,13 @@
           "description": "Azure tenant user password to authenticate inside controller VM."
         }
       },
+      "VMAdminUserName": {
+      "type": "string",
+      "minLength": 1,
+      "metadata": {
+        "description": "local administrator username"
+      }
+    },
       "vmAdminPassword": {
         "type": "securestring",
         "defaultValue": "[concat('Subscription#',subscription().subscriptionId)]",
@@ -83,7 +90,7 @@
       "uniqueStorageAccountName": "[concat('sa', resourceGroup().name)]",
       "uniqueStorageAccountContainerName": "[concat('sc', resourceGroup().name)]",
       "vmOsSku": "[parameters('vmOsSku')]",
-      "vmAdminUsername": "vmadministrator",
+      "vmAdminUsername": "[parameters('VMAdminUserName')]",
       "vmName": "[concat('vm', resourceGroup().name)]",
       "vmOsDiskName": "[concat('od', resourceGroup().name)]",
       "vmNicName": "[concat('nc', resourceGroup().name)]",
